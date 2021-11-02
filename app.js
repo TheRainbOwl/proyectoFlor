@@ -24,6 +24,15 @@ app.get("/compras", (req, res) =>{
 app.get("/flores", (req, res) =>{
     res.render("flores.pug", { root: __dirname})
 })
+
+app.get("/historial", (req, res) =>{
+    res.sendFile("views/historial.html", { root: __dirname })
+})
+
+app.get("/consulta", (req, res) =>{
+    res.sendFile("views/consulta.html", { root: __dirname })
+})
+
 // SERVER ESCUCHANDO EN EL PUERTO 3000
 
 app.listen(port, () =>{

@@ -13,10 +13,17 @@ app.use(express.urlencoded({extended: false}))
 
 // PETICIONES
 
-app.get('/', (req, res, next) => {
-	res.render('index.pug', {root: __dirname})
+app.get("/", (req, res) => {
+	res.render('usuario.pug', {root: __dirname})
 });
 
+app.get("/compras", (req, res) =>{
+    res.render("compras.pug", { root: __dirname})
+})
+
+app.get("/flores", (req, res) =>{
+    res.render("flores.pug", { root: __dirname})
+})
 // SERVER ESCUCHANDO EN EL PUERTO 3000
 
 app.listen(port, () =>{
